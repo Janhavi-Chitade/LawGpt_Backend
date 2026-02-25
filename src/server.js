@@ -9,12 +9,12 @@ const app = express();
 
 // console.log("GROQ_API_KEY ", process.env.GROQ_API_KEY);
 
-app.use(cors(
-  {origin: [process.env.CORS_URL || "http://localhost:3000"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+app.use(cors({
+  origin: [process.env.CORS_URL || "http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true}
-));
+  credentials: true
+}));
 app.use(express.json());
 
 // Swagger Documentation
